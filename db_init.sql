@@ -11,6 +11,7 @@
 CREATE DATABASE STREAMLIT_APPS;
 -- If you want to create a specific schema under the database, run
 --CREATE SCHEMA <SCHEMA_NAME>;
+USE DATABASE STREAMLIT_APPS;
 CREATE SCHEMA DEMO;
 -- Or, you can use the PUBLIC schema that was automatically created with the database.
 
@@ -34,3 +35,12 @@ GRANT USAGE ON WAREHOUSE COMPUTE_WH TO ROLE STREAMLIT_USER;
 -- If you only want certain roles to create Streamlit apps,
 -- or want to enable a different location to store the Streamlit apps,
 -- change the database, schema, and role names in the above commands.
+
+-- Tables
+USE SCHEMA DEMO;
+
+CREATE TABLE rates (
+  period number, --Default precision and scale are (38,0)
+  scenario varchar(255),
+  rate number(38, 10)
+);
