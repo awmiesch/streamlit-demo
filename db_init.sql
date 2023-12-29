@@ -39,8 +39,20 @@ GRANT USAGE ON WAREHOUSE COMPUTE_WH TO ROLE STREAMLIT_USER;
 -- Tables
 USE SCHEMA DEMO;
 
-CREATE TABLE rates (
-  period number, --Default precision and scale are (38,0)
-  scenario varchar(255),
-  rate number(38, 10)
+CREATE or replace TABLE fcst_rates (
+  fcst_period number, --Default precision and scale are (38,0)
+  fcst_rate number(38, 10)
 );
+
+insert into fcst_rates (fcst_period, fcst_rate) values (1, 5.1);
+insert into fcst_rates (fcst_period, fcst_rate) values (2, 5.0);
+insert into fcst_rates (fcst_period, fcst_rate) values (3, 4.9);
+insert into fcst_rates (fcst_period, fcst_rate) values (4, 4.8);
+insert into fcst_rates (fcst_period, fcst_rate) values (5, 4.7);
+insert into fcst_rates (fcst_period, fcst_rate) values (6, 4.6);
+insert into fcst_rates (fcst_period, fcst_rate) values (7, 4.5);
+insert into fcst_rates (fcst_period, fcst_rate) values (8, 4.4);
+insert into fcst_rates (fcst_period, fcst_rate) values (9, 4.3);
+insert into fcst_rates (fcst_period, fcst_rate) values (10, 4.2);
+insert into fcst_rates (fcst_period, fcst_rate) values (11, 4.1);
+insert into fcst_rates (fcst_period, fcst_rate) values (12, 4.0);
